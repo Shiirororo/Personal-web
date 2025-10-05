@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Handlee } from "next/font/google";
 import { BackgroundBeams } from "@/components/ui/background-beams";
+import { UniverseBackground } from "@/components/ui/universe";
 import Navbar from "./components/Navbar";
 import "./globals.css";
 
@@ -30,14 +31,16 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${handlee.variable} antialiased bg-neutral-950`}
       >
-        <header className="absolute top-0 left-0 w-full z-20">
-          <Navbar />
-        </header> 
-        <main>
-          {children}
+        <div className="fixed inset-0 -z-10">
           <BackgroundBeams />
+        </div>
+        <header className="fixed top-0 left-0 w-full z-20">
+          <Navbar />
+        </header>
+        <main className="pt-[20px] pb-[60px] h-full overflow-y-auto">
+          {children}
         </main>
-        <footer className="hidden sm:flex bg-neutral-950">
+        <footer className="fixed bottom-0 left-0 w-full z-10 bg-neutral-950 hidden sm:flex justify-center py-2">
           <p className="text-sm text-white">© 2025 Shiro. All rights reserved.</p>
         </footer>
       </body>

@@ -1,7 +1,7 @@
 // app/about/page.tsx
 import React from "react";
 import Image from "next/image";
-import { SiAmazon } from "react-icons/si";
+import { SiAmazon, SiC, SiCplusplus, SiGithub, SiPython, SiTerraform } from "react-icons/si";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 
 const About = () => {
@@ -48,12 +48,26 @@ const About = () => {
             <h2 className="text-2xl font-semibold mb-4">Skills</h2>
             <ul className="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm md:text-base">
               <li>🌐 Fundamental Networking</li>
-              <li>🧠 C/C++, Python and Javascript</li>
-              <li>📦 Git & GitHub</li>
+              <div className="flex items-center gap-2">
+                <SiC className="w-6 h-6 text-blue-500" />
+                <SiCplusplus className="w-6 h-6 text-blue-500" />
+                <SiPython className="w-6 h-6 text-[#3776AB]" />
+                <span>
+                  C, C++, Python
+                </span>
+              </div>
+              <div className="flex items-center gap-2">
+                <SiGithub className="w-6 h-6 text-white-500" />
+                <span>Github</span>
+              </div>
               <li>📚 English(C1) / Japanese (N4)</li>
               <div className="flex items-center gap-2">
                 <SiAmazon className="w-6 h-6 text-orange-500" />
                 <span>AWS (EC2, S3, Lambda)</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <SiTerraform className="w-6 h-6 text-purple-500" />
+                <span>IaS Terraform (AWS)</span>
               </div>
             </ul>
           </section>

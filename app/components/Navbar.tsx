@@ -1,4 +1,4 @@
-'use client';
+'use client'
 import Link from 'next/link'
 import ThemeSwitch from './ThemeSwitch'
 import {useState} from 'react'
@@ -74,7 +74,7 @@ export default function Navbar () {
   const toggleNavbar = () => setIsOpen(!isOpen)
 
   return (
-    <nav className="fixed w-full h-16 sm:h-24 shadow-xl font-merriweather">
+    <nav className="fixed w-full h-16 sm:h-24 shadow-xl font-merriweather bg-neutral-950">
       <div className ="flex justify-between items-center h-full w-full px-4 2xl:px-16">
         <Link href="/" className="text-white text-4xl font-bold font-handlee hidden sm:flex">
           Welcome, {User}

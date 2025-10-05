@@ -1,13 +1,10 @@
-import Navbar from "@/app/components/Navbar";
 import Contact from "@/app/Contact/Contact";
 export default function AboutPage() {
   return (
-    <>
-    <header>
-      <Navbar/>
-    </header>
-    <Contact/>
-    {/* <main className="min-h-screen px-6 py-16 bg-background text-foreground"/> */}
-    </>
+    <div className="min-h-screen">
+      <main className="space-y-12 p-6 pt-16">
+        <Contact />
+      </main>
+    </div>
   );
 }

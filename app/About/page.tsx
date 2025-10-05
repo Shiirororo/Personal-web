@@ -6,15 +6,18 @@ import About from "@/app/About/About"
 export default function AboutPage() {
   return (
     <>
-    <main className="relative h-screen pt-8 sm:pt-16 ">
-      <div className="hidden sm:block absolute inset-0 z-0 bg-neutral-950">
-        
-      </div>
-    <section id="about" className="flex items-center justify-start pl-16">
-      <About />
-    </section>
-    </main>
-    
+      {/* Nền cố định */}
+
+
+      {/* Nội dung chính */}
+      <main className="relative min-h-screen flex items-center justify-center px-6 sm:px-16">
+        <section
+          id="about"
+          className="relative z-10 w-full max-w-5xl text-white flex justify-center sm:justify-start mt-24 sm:mt-0"
+        >
+          <About />
+        </section>
+      </main>
     </>
   );
 }
