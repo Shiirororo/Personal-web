@@ -18,7 +18,7 @@ export const sendEmail = async ({
     try {
         await resend.emails.send({
             to: "chacchankhongphainhan313@gmail.com",
-            from: "  Test <onboarding@resend.dev>",
+            from: "noreply@helloiamshiro.com",
             subject: `New message from ${name}`,
             html: `
         <div style="font-family: Arial, sans-serif; line-height: 1.6;">
