@@ -58,7 +58,7 @@ const About = () => {
               </div>
               <div className="flex items-center gap-2">
                 <SiGithub className="w-6 h-6 text-white-500" />
-                <span>Github</span>
+                <span>Git</span>
               </div>
               <li>📚 English(C1) / Japanese (N4)</li>
               <div className="flex items-center gap-2">

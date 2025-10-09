@@ -1,12 +1,11 @@
 "use client";
 import { FaFacebook, FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
-// import { sendEmail } from "../lib/resend";
+import { sendEmail } from "@/lib/resend";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { Label } from "@/components/ui/label";//To do: Reinstall resend lib
 
 
 
