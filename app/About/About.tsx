@@ -18,7 +18,7 @@ const About = () => {
           {/* Ảnh + thông tin cá nhân */}
           <div className="flex flex-col md:flex-row items-center gap-10">
             <Image
-              src="public/images/avatar.jpg"
+              src="/images/avatar.png"
               alt="My avatar"
               width={180}
               height={180}
