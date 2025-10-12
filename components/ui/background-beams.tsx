@@ -179,7 +179,7 @@ export const BackgroundBeams = React.memo(
                   >
                     <div
                       className="absolute left-1/2 top-0 rounded-full bg-gray-300 shadow-[0_0_10px_4px_rgba(255,255,255,0.3)]"
-                      style={{ width: 10, height: 10, marginLeft: -5 }}
+                      style={{ width: 4, height: 4, marginLeft: -5 }}
                     />
                   </motion.div>
                 )}

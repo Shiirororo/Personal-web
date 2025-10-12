@@ -31,7 +31,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${handlee.variable} antialiased bg-neutral-950`}
       >
-        <div className="fixed inset-0 -z-10">
+        <div className="fixed inset-0 -z-10 hidden sm:flex">
           <BackgroundBeams />
         </div>
         <header className="fixed top-0 left-0 w-full z-20">

@@ -2,16 +2,7 @@
 import { useState } from "react";
 // import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-// import {
-//     Dialog,
-//     DialogContent,
-//     DialogTrigger,
-//     DialogHeader,
-//     DialogTitle,
-//     DialogDescription,
-//     DialogFooter,
-// } from "@/components/ui/dialog";
-// import { format } from "date-fns";
+
 
 export type Article = {
     id: string;
@@ -22,14 +13,6 @@ export type Article = {
     image?: string;
     content?: string;  //FullHTML/TEXT
 }
-
-
-
-const truncate = (s?: string, n = 140) => {
-    if (!s) return "";
-    return s.length > n ? s.slice(0, n).trimEnd() + "…" : s;
-};
-
 export default function ArticleGrid({ articles }: { articles: Article[] }) {
     const [openArticle, setOpenArticle] = useState<Article | null>(null);
     return (

@@ -28,7 +28,7 @@ const About = () => {
             <div className="space-y-4 text-lg leading-relaxed">
               <p>
                 Hi! I'm <span className="font-semibold">Nhân</span>, second-year
-                student majoring in Intelligent Embedded Systems and IoT.
+                student majoring in Embedded Systems and IoT.
               </p>
               <p>
                 I'm currently focused on Cloud services (such as AWS) with a
