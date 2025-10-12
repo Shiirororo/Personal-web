@@ -1,4 +1,3 @@
-import HeroSection from "@/components/HeroSection"
 import ArticleGrid, { Article } from "@/components/FeatureSection";
 const sampleArticles: Article[] = [
     {
