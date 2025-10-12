@@ -4,7 +4,6 @@ export default function DailyLifePage() {
         <>
             <div className="min-h-screen">
                 <main className="space-y-12 p-6 pt-32">
-                    <Post />
 
                 </main>
             </div>
