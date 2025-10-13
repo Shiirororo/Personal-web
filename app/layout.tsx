@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Handlee } from "next/font/google";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { UniverseBackground } from "@/components/ui/universe";
-import Navbar from "./components/Navbar";
+import Navbar from "@/components/Navbar";
 import "./globals.css";
 
 const inter = Inter({
