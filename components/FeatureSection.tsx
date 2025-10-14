@@ -1,5 +1,6 @@
 'use client'
 import { useState } from "react";
+import Link from "next/link";
 // import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
@@ -12,6 +13,7 @@ export type Article = {
     publishedAt?: string;
     image?: string;
     content?: string;  //FullHTML/TEXT
+    slug?: string;     // For dynamic routing
 }
 export default function ArticleGrid({ articles }: { articles: Article[] }) {
     const [openArticle, setOpenArticle] = useState<Article | null>(null);
@@ -24,9 +26,17 @@ export default function ArticleGrid({ articles }: { articles: Article[] }) {
                 >
                     {/* Left: Text content */}
                     <div className="flex-1 pr-4">
-                        <h2 className="text-2xl font-semibold text-white hover:underline cursor-pointer">
-                            {a.title}
-                        </h2>
+                        {a.slug ? (
+                            <Link href={`/Blog/${a.slug}`}>
+                                <h2 className="text-2xl font-semibold text-white hover:underline cursor-pointer">
+                                    {a.title}
+                                </h2>
+                            </Link>
+                        ) : (
+                            <h2 className="text-2xl font-semibold text-white hover:underline cursor-pointer">
+                                {a.title}
+                            </h2>
+                        )}
                         <div className="text-sm text-neutral-400 mt-1 flex items-center space-x-3">
                             {a.publishedAt && (
                                 <span>
