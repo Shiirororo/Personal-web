@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import { SiAmazon, SiC, SiCplusplus, SiGithub, SiPython, SiTerraform } from "react-icons/si";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import GithubProjects from "@/components/GithubProjects";
 
 const About = () => {
   return (
@@ -70,6 +71,11 @@ const About = () => {
                 <span>IaS Terraform (AWS)</span>
               </div>
             </ul>
+          </section>
+
+          {/* GitHub Projects */}
+          <section>
+            <GithubProjects username="Shiirororo" perPage={6} />
           </section>
         </CardContent>
       </Card>
