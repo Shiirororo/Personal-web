@@ -14,7 +14,7 @@ const sampleArticles: Article[] = [
         description: 'Hướng dẫn cơ bản về các chưsc năng của nextJS ',
         author: 'Nhân Nguyễn',
         publishedAt: '2025-10-01T09:00:00.000Z',
-        image: 'https://images.viblo.asia/60/c9457140-6d50-4c63-87d1-f6f84360df33.png',
+        image: 'https://techvccloud.mediacdn.vn/280518386289090560/2024/8/20/nextjs-17241427687401007111163-20-0-582-1000-crop-1724142772135873217359.jpg',
         slug: 'nextjs-guide',
     },
     
