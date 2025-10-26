@@ -10,6 +10,24 @@ List of ShadCN components that I use:
 - LAbel
 - Textarea
 
+## Environment Setup
+
+Create a `.env.local` file in the root directory and add your backend API URL:
+
+```bash
+DEV_BACKEND_API_KEY=https://your-backend-url.com
+```
+
+## Blog API Integration
+
+The blog now fetches content from your backend API. The available blog post slugs are:
+- `mysql_commands_summary`
+- `nextjs-guide`
+
+The API endpoints expected are:
+- `GET {DEV_BACKEND_API_KEY}/posts` - Returns list of all blog posts
+- `GET {DEV_BACKEND_API_KEY}/posts/{slug}` - Returns specific blog post by slug
+
 ## Getting Started
 
 First, run the development server:

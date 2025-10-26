@@ -1,5 +1,5 @@
 import MarkdownArticle from "@/components/MarkdownArticle"
-import { getMarkdownFileBySlug } from "@/lib/markdown"
+import { fetchBlogPost, getAvailableSlugs } from "@/lib/api"
 import { notFound } from "next/navigation"
 
 interface BlogPostPageProps {
@@ -8,11 +8,11 @@ interface BlogPostPageProps {
   }
 }
 
-export default function BlogPostPage({ params }: BlogPostPageProps) {
-  // Try to get the markdown file
-  const markdownFile = getMarkdownFileBySlug("content/blog", params.slug)
+export default async function BlogPostPage({ params }: BlogPostPageProps) {
+  // Fetch the blog post from API
+  const blogPost = await fetchBlogPost(params.slug)
   
-  if (!markdownFile) {
+  if (!blogPost) {
     notFound()
   }
 
@@ -20,8 +20,16 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
     <div className="min-h-screen bg-black">
       <div className="container mx-auto px-4 py-8">
         <MarkdownArticle 
-          content={markdownFile.content}
-          metadata={markdownFile.metadata}
+          content={blogPost.content}
+          metadata={{
+            title: blogPost.title,
+            description: blogPost.description,
+            author: blogPost.author,
+            publishedAt: blogPost.publishedAt,
+            tags: blogPost.tags,
+            coverImage: blogPost.coverImage,
+            ...blogPost.metadata
+          }}
         />
       </div>
     </div>
@@ -30,10 +38,9 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
 
 // Generate static params for all blog posts
 export async function generateStaticParams() {
-  const { getAllMarkdownFiles } = await import("@/lib/markdown")
-  const posts = getAllMarkdownFiles("content/blog")
+  const slugs = getAvailableSlugs()
   
-  return posts.map((post) => ({
-    slug: post.slug,
+  return slugs.map((slug) => ({
+    slug: slug,
   }))
 }
