@@ -8,7 +8,7 @@ import GithubProjects from "@/components/GithubProjects";
 const About = () => {
   return (
     <main className="min-h-screen flex items-center justify-center bg-transparent font-sans z-10">
-      <Card className="max-w-4xl w-full mx-auto p-6 bg-neutral-950 border border-neutral-800 text-neutral-200 shadow-lg">
+      <Card className="max-w-4xl w-full mx-auto p-6 bg-card border border-border text-card-foreground shadow-lg">
         <CardHeader>
           <CardTitle className="text-4xl font-bold tracking-tight">
             About Me
@@ -36,8 +36,7 @@ const About = () => {
                 strong interest in pursuing the Solution Architect path.
               </p>
               <p>
-                Outside of IT skills, I am able to use up to three languages:
-                <span className="font-semibold"> Vietnamese (Mother tongue), </span>
+                Outside of IT skills, I am able to use up to these languages:
                 <span className="font-semibold"> English (IELTS 7.0), </span>
                 <span className="font-semibold"> Japanese (N4). </span>
               </p>
@@ -48,17 +47,15 @@ const About = () => {
           <section>
             <h2 className="text-2xl font-semibold mb-4">Skills</h2>
             <ul className="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm md:text-base">
-              <li>🌐 Fundamental Networking</li>
+
               <div className="flex items-center gap-2">
-                <SiC className="w-6 h-6 text-blue-500" />
-                <SiCplusplus className="w-6 h-6 text-blue-500" />
-                <SiPython className="w-6 h-6 text-[#3776AB]" />
+               <SiPython className="w-6 h-6 text-[#3776AB]" />
                 <span>
-                  C, C++, Python
+                  Python
                 </span>
               </div>
               <div className="flex items-center gap-2">
-                <SiGithub className="w-6 h-6 text-white-500" />
+                <SiGithub className="w-6 h-6 text-card-foreground" />
                 <span>Git</span>
               </div>
               <li>📚 English(C1) / Japanese (N4)</li>
@@ -68,7 +65,7 @@ const About = () => {
               </div>
               <div className="flex items-center gap-2">
                 <SiTerraform className="w-6 h-6 text-purple-500" />
-                <span>IaS Terraform (AWS)</span>
+                <span>Terraform (AWS)</span>
               </div>
             </ul>
           </section>

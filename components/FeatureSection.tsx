@@ -22,22 +22,22 @@ export default function ArticleGrid({ articles }: { articles: Article[] }) {
             {articles.map((a) => (
                 <div
                     key={a.id}
-                    className="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-neutral-700 pb-6"
+                    className="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-border pb-6"
                 >
                     {/* Left: Text content */}
                     <div className="flex-1 pr-4">
                         {a.slug ? (
                             <Link href={`/Blog/${a.slug}`}>
-                                <h2 className="text-2xl font-semibold text-white hover:underline cursor-pointer">
+                                                <h2 className="text-2xl font-semibold text-foreground hover:underline cursor-pointer">
                                     {a.title}
                                 </h2>
                             </Link>
                         ) : (
-                            <h2 className="text-2xl font-semibold text-white hover:underline cursor-pointer">
+                            <h2 className="text-2xl font-semibold text-foreground hover:underline cursor-pointer">
                                 {a.title}
                             </h2>
                         )}
-                        <div className="text-sm text-neutral-400 mt-1 flex items-center space-x-3">
+                        <div className="text-sm text-muted-foreground mt-1 flex items-center space-x-3">
                             {a.publishedAt && (
                                 <span>
                                     {new Date(a.publishedAt).toLocaleDateString("en-US", {
@@ -49,7 +49,7 @@ export default function ArticleGrid({ articles }: { articles: Article[] }) {
                             )}
                             <span>📖 5 min read</span>
                         </div>
-                        <p className="mt-2 text-neutral-300">{a.description}</p>
+                        <p className="mt-2 text-muted-foreground">{a.description}</p>
                         <Button variant="link" className="p-0 mt-2 text-sm underline">
                             Xem preview
                         </Button>

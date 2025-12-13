@@ -55,7 +55,7 @@ export default function GithubProjects({ username, perPage = 6 }: { username: st
 
   if (loading) {
     return (
-      <div className="w-full py-8 text-center text-sm text-neutral-400">Loading GitHub projects…</div>
+      <div className="w-full py-8 text-center text-sm text-muted-foreground">Loading GitHub projects…</div>
     );
   }
 
@@ -67,7 +67,7 @@ export default function GithubProjects({ username, perPage = 6 }: { username: st
 
   if (!repos || repos.length === 0) {
     return (
-      <div className="w-full py-8 text-center text-sm text-neutral-400">No repositories found.</div>
+      <div className="w-full py-8 text-center text-sm text-muted-foreground">No repositories found.</div>
     );
   }
 
@@ -76,7 +76,7 @@ export default function GithubProjects({ username, perPage = 6 }: { username: st
       <div className="flex items-center justify-between">
         <h2 className="text-2xl font-semibold">GitHub Projects</h2>
         <a
-          className="text-sm text-blue-400 hover:text-blue-300 underline underline-offset-4"
+          className="text-sm text-primary hover:text-primary/80 underline underline-offset-4"
           href={`https://github.com/${username}`}
           target="_blank"
           rel="noopener noreferrer"
@@ -86,7 +86,7 @@ export default function GithubProjects({ username, perPage = 6 }: { username: st
       </div>
       <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {repos.map((repo) => (
-          <li key={repo.id} className="rounded-lg border border-neutral-800 bg-neutral-900 p-4 hover:border-neutral-700 transition-colors">
+          <li key={repo.id} className="rounded-lg border border-border bg-card p-4 hover:border-border transition-colors">
             <a
               href={repo.html_url}
               target="_blank"
@@ -94,13 +94,13 @@ export default function GithubProjects({ username, perPage = 6 }: { username: st
               className="group"
             >
               <div className="flex items-center justify-between">
-                <h3 className="text-lg font-medium text-neutral-100 group-hover:text-white">{repo.name}</h3>
-                <span className="text-xs text-neutral-400">{new Date(repo.updated_at).toLocaleDateString()}</span>
+                <h3 className="text-lg font-medium text-card-foreground group-hover:text-foreground">{repo.name}</h3>
+                <span className="text-xs text-muted-foreground">{new Date(repo.updated_at).toLocaleDateString()}</span>
               </div>
               {repo.description && (
-                <p className="mt-2 text-sm text-neutral-300">{repo.description}</p>
+                <p className="mt-2 text-sm text-muted-foreground">{repo.description}</p>
               )}
-              <div className="mt-3 flex items-center gap-3 text-xs text-neutral-400">
+              <div className="mt-3 flex items-center gap-3 text-xs text-muted-foreground">
                 {repo.language && <span>{repo.language}</span>}
                 <span>★ {repo.stargazers_count}</span>
               </div>

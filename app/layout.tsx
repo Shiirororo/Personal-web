@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Handlee } from "next/font/google";
-import { BackgroundBeams } from "@/components/ui/background-beams";
+import { BackgroundSimple } from "@/components/ui/background-simple";
 import Navbar from "@/components/Navbar";
+import { Providers } from "@/components/providers";
 import "./globals.css";
 
 const inter = Inter({
@@ -28,20 +29,22 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${handlee.variable} antialiased bg-neutral-950`}
+        className={`${inter.variable} ${handlee.variable} antialiased bg-background`}
       >
+        <Providers>
         <div className="fixed inset-0 -z-10 hidden sm:flex">
-          <BackgroundBeams />
+          <BackgroundSimple />
         </div>
-        <header className="fixed top-0 left-0 w-full z-20">
-          <Navbar />
-        </header>
+          <header className="fixed top-0 left-0 w-full z-20">
+            <Navbar />
+          </header>
         <main className="pt-[20px] pb-[60px] h-full overflow-y-auto">
           {children}
         </main>
-        <footer className="fixed bottom-0 left-0 w-full z-10 bg-neutral-950 hidden sm:flex justify-center py-2">
-          <p className="text-sm text-white">© 2025 Shiro. All rights reserved.</p>
-        </footer>
+            <footer className="fixed bottom-0 left-0 w-full z-10 bg-background hidden sm:flex justify-center py-2">
+              <p className="text-sm text-foreground">© 2025 Shiro. All rights reserved.</p>
+            </footer>
+        </Providers>
       </body>
     </html>
   );

@@ -60,9 +60,7 @@ export async function fetchBlogPost(slug: string): Promise<BlogPost | null> {
   }
 }
 
-/**
- * Fetch all available blog posts
- */
+
 export async function fetchAllBlogPosts(): Promise<BlogPostList[]> {
   try {
     const apiKey = process.env.DEV_BACKEND_API_KEY

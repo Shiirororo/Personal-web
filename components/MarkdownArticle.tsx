@@ -26,31 +26,31 @@ export default function MarkdownArticle({
 }: MarkdownArticleProps) {
   return (
     <div className={cn("max-w-4xl mx-auto", className)}>
-      <Card className="shadow-lg border border-gray-700 bg-black text-white">
+      <Card className="shadow-lg border border-border bg-card text-card-foreground">
         {metadata && (
           <>
             <CardHeader className="space-y-4">
               <div className="space-y-2">
-                <h1 className="text-4xl font-bold tracking-tight text-white">
+                <h1 className="text-4xl font-bold tracking-tight text-card-foreground">
                   {metadata.title}
                 </h1>
                 {metadata.description && (
-                  <p className="text-lg text-gray-300">
+                  <p className="text-lg text-muted-foreground">
                     {metadata.description}
                   </p>
                 )}
               </div>
               
-              <div className="flex flex-wrap items-center gap-4 text-sm text-gray-400">
+              <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
                 {metadata.author && (
                   <div className="flex items-center gap-2">
-                    <span className="font-medium text-white">By {metadata.author}</span>
+                    <span className="font-medium text-card-foreground">By {metadata.author}</span>
                   </div>
                 )}
                 {metadata.publishedAt && (
                   <div className="flex items-center gap-2">
-                    <span className="text-gray-500">•</span>
-                    <time dateTime={metadata.publishedAt} className="text-gray-400">
+                    <span className="text-muted">•</span>
+                    <time dateTime={metadata.publishedAt} className="text-muted-foreground">
                       {new Date(metadata.publishedAt).toLocaleDateString('vi-VN', {
                         year: 'numeric',
                         month: 'long',
@@ -75,34 +75,34 @@ export default function MarkdownArticle({
           </>
         )}
         
-        <CardContent className="prose prose-lg max-w-none py-8 text-white">
+        <CardContent className="prose prose-lg max-w-none py-8 text-card-foreground">
           <ReactMarkdown
             components={{
               // Headings
               h1: ({ children, ...props }) => (
-                <h1 className="text-3xl font-bold mb-4 mt-8 first:mt-0 text-white" {...props}>
+                <h1 className="text-3xl font-bold mb-4 mt-8 first:mt-0 text-card-foreground" {...props}>
                   {children}
                 </h1>
               ),
               h2: ({ children, ...props }) => (
-                <h2 className="text-2xl font-semibold mb-3 mt-6 text-white" {...props}>
+                <h2 className="text-2xl font-semibold mb-3 mt-6 text-card-foreground" {...props}>
                   {children}
                 </h2>
               ),
               h3: ({ children, ...props }) => (
-                <h3 className="text-xl font-semibold mb-2 mt-4 text-white" {...props}>
+                <h3 className="text-xl font-semibold mb-2 mt-4 text-card-foreground" {...props}>
                   {children}
                 </h3>
               ),
               h4: ({ children, ...props }) => (
-                <h4 className="text-lg font-medium mb-2 mt-3 text-white" {...props}>
+                <h4 className="text-lg font-medium mb-2 mt-3 text-card-foreground" {...props}>
                   {children}
                 </h4>
               ),
               
               // Paragraphs
               p: ({ children, ...props }) => (
-                <p className="mb-4 leading-relaxed text-white" {...props}>
+                <p className="mb-4 leading-relaxed text-card-foreground" {...props}>
                   {children}
                 </p>
               ),
@@ -110,8 +110,8 @@ export default function MarkdownArticle({
               // Links
               a: ({ children, href, ...props }) => (
                 <a 
-                  href={href} 
-                  className="text-blue-400 hover:text-blue-300 underline underline-offset-4 transition-colors" 
+                  href={href}
+                  className="text-primary hover:text-primary/80 underline underline-offset-4 transition-colors" 
                   {...props}
                 >
                   {children}
@@ -130,7 +130,7 @@ export default function MarkdownArticle({
                 </ol>
               ),
               li: ({ children, ...props }) => (
-                <li className="text-white" {...props}>
+                <li className="text-card-foreground" {...props}>
                   {children}
                 </li>
               ),
@@ -141,7 +141,7 @@ export default function MarkdownArticle({
                 if (isInline) {
                   return (
                     <code 
-                      className="bg-gray-800 px-1.5 py-0.5 rounded text-sm font-mono text-green-400" 
+                      className="bg-input px-1.5 py-0.5 rounded text-sm font-mono text-green-400" 
                       {...props}
                     >
                       {children}
@@ -155,14 +155,14 @@ export default function MarkdownArticle({
                 )
               },
               pre: ({ children, ...props }) => (
-                <pre className="bg-gray-900 p-4 rounded-lg overflow-x-auto mb-4 border border-gray-700 text-green-400" {...props}>
+                <pre className="bg-input p-4 rounded-lg overflow-x-auto mb-4 border border-border text-green-400" {...props}>
                   {children}
                 </pre>
               ),
               
               // Blockquotes
               blockquote: ({ children, ...props }) => (
-                <blockquote className="border-l-4 border-blue-400 pl-4 italic text-gray-300 mb-4" {...props}>
+                <blockquote className="border-l-4 border-accent pl-4 italic text-muted-foreground mb-4" {...props}>
                   {children}
                 </blockquote>
               ),
@@ -170,18 +170,18 @@ export default function MarkdownArticle({
               // Tables
               table: ({ children, ...props }) => (
                 <div className="overflow-x-auto mb-4">
-                  <table className="w-full border-collapse border border-gray-700" {...props}>
+                  <table className="w-full border-collapse border border-border" {...props}>
                     {children}
                   </table>
                 </div>
               ),
               th: ({ children, ...props }) => (
-                <th className="border border-gray-700 bg-gray-800 px-4 py-2 text-left font-semibold text-white" {...props}>
+                <th className="border border-border bg-card px-4 py-2 text-left font-semibold text-card-foreground" {...props}>
                   {children}
                 </th>
               ),
               td: ({ children, ...props }) => (
-                <td className="border border-gray-700 px-4 py-2 text-white" {...props}>
+                <td className="border border-border px-4 py-2 text-card-foreground" {...props}>
                   {children}
                 </td>
               ),
@@ -198,17 +198,17 @@ export default function MarkdownArticle({
               
               // Horizontal rule
               hr: ({ ...props }) => (
-                <hr className="my-8 border-gray-700" {...props} />
+                <hr className="my-8 border-border" {...props} />
               ),
               
               // Strong and emphasis
               strong: ({ children, ...props }) => (
-                <strong className="font-semibold text-white" {...props}>
+                <strong className="font-semibold text-card-foreground" {...props}>
                   {children}
                 </strong>
               ),
               em: ({ children, ...props }) => (
-                <em className="italic text-white" {...props}>
+                <em className="italic text-card-foreground" {...props}>
                   {children}
                 </em>
               ),

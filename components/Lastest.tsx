@@ -58,7 +58,7 @@ export default function LatestDiscoverySwiper() {
       <h2 className="text-3xl font-bold mb-8">My Project</h2>
       {discoveries.length === 0 ? (
         <div className="text-center">
-          <h3 className="text-2xl font-bold text-gray-400">Nothing to display</h3>
+          <h3 className="text-2xl font-bold text-muted-foreground">Nothing to display</h3>
         </div>
       ):(
       <Swiper
@@ -103,12 +103,12 @@ export default function LatestDiscoverySwiper() {
                   />
                 </div>
                 <div className="mt-4">
-                  <p className="text-sm text-gray-500">{item.date}</p>
-                  <h3 className="text-lg font-semibold mt-1 group-hover:text-blue-600 transition-colors duration-300">
+                  <p className="text-sm text-muted">{item.date}</p>
+                  <h3 className="text-lg font-semibold mt-1 group-hover:text-primary transition-colors duration-300">
                     {item.title}
                   </h3>
                   {item.description && (
-                    <p className="mt-2 text-sm text-gray-400">{item.description}</p>
+                    <p className="mt-2 text-sm text-muted-foreground">{item.description}</p>
                   )}
                 </div>
               </div>
